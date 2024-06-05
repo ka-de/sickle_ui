@@ -14,8 +14,8 @@ dev = [
 sickle_math = { path = "crates/sickle_math" }
 sickle_macros = { path = "crates/sickle_macros" }
 
-bevy = { version = "0.13" }
-bevy_reflect = { version = "0.13" }
+bevy = { version = "0.13.2" }
+bevy_reflect = { version = "0.13.2" }
 
 [dev-dependencies]
-bevy_ecs = { version = "0.13" }
+bevy_ecs = { version = "0.13.2" }
