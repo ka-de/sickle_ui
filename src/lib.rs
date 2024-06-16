@@ -1,6 +1,7 @@
 use bevy::prelude::*;
 
 pub mod animated_interaction;
+#[cfg(feature = "embeded_assets")]
 mod assets;
 pub mod dev_panels;
 pub mod drag_interaction;
@@ -17,6 +18,7 @@ pub mod ui_commands;
 pub mod ui_style;
 pub mod widgets;
 
+#[cfg(feature = "embeded_assets")]
 use assets::BuiltInAssetsPlugin;
 use drag_interaction::DragInteractionPlugin;
 use drop_interaction::DropInteractionPlugin;
@@ -37,6 +39,7 @@ pub struct SickleUiPlugin;
 impl Plugin for SickleUiPlugin {
     fn build(&self, app: &mut App) {
         app.add_plugins((
+            #[cfg(feature = "embeded_assets")]
             BuiltInAssetsPlugin,
             AnimatedInteractionPlugin,
             DragInteractionPlugin,

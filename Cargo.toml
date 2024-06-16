@@ -6,9 +6,12 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-dev = [
-    "bevy/dynamic_linking",
-]
+dev = ["bevy/dynamic_linking"]
+scene_view = ["bevy/bevy_pbr"]
+entity_component_list = []
+hierarchy = []
+embedded_assets = []
+
 
 [dependencies]
 sickle_math = { path = "crates/sickle_math" }
@@ -19,3 +22,18 @@ bevy_reflect = { version = "0.13.2", default-features = false }
 
 [dev-dependencies]
 bevy_ecs = { version = "0.13.2" }
+
+[[example]]
+name = "simple_editor"
+path = "examples/simple_editor.rs"
+required-features = [
+    "scene_view",
+    "entity_component_list",
+    "hierarchy",
+    "embedded_assets",
+]
+
+[[example]]
+name = "docking_zone_splits"
+path = "examples/docking_zone_splits.rs"
+required-features = ["hierarchy", "embedded_assets"]
