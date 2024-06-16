@@ -1,4 +1,4 @@
-use std::marker::PhantomData;
+// use std::marker::PhantomData;
 
 use bevy::{prelude::*, utils::HashSet};
 use sickle_math::lerp::Lerp;
@@ -104,31 +104,31 @@ impl LockedStyleAttributes {
     }
 }
 
-#[derive(Component, Debug)]
-pub struct Theme<C>
-where
-    C: Component,
-{
-    context: PhantomData<C>,
-    style: Vec<StyledAttribute>,
-}
+// #[derive(Component, Debug)]
+// pub struct Theme<C>
+// where
+//     C: Component,
+// {
+//     context: PhantomData<C>,
+//     style: Vec<StyledAttribute>,
+// }
 
-impl<C> Theme<C>
-where
-    C: Component,
-{
-    pub fn add_style(&mut self, attribute: StyledAttribute) {
-        if !self.style.contains(&attribute) {
-            self.style.push(attribute);
-        }
-    }
+// impl<C> Theme<C>
+// where
+//     C: Component,
+// {
+//     pub fn add_style(&mut self, attribute: StyledAttribute) {
+//         if !self.style.contains(&attribute) {
+//             self.style.push(attribute);
+//         }
+//     }
 
-    pub fn remove_style(&mut self, attribute: StyledAttribute) {
-        if let Some(index) = self.style.iter().position(|e| e == &attribute) {
-            self.style.remove(index);
-        }
-    }
-}
+//     pub fn remove_style(&mut self, attribute: StyledAttribute) {
+//         if let Some(index) = self.style.iter().position(|e| e == &attribute) {
+//             self.style.remove(index);
+//         }
+//     }
+// }
 
 // fn apply_theme<C>(
 //     q_added_targets: Query<Entity, Added<C>>,
